@@ -1,0 +1,21 @@
+.nav-box {
+    border-bottom: solid rgb(53, 52, 52) 1px;
+    border-width: 80%;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.nav ul {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+    width: 50%;
+}

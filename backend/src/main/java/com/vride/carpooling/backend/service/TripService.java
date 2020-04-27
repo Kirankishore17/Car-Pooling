@@ -10,6 +10,7 @@ import com.vride.carpooling.backend.dao.DriverDao;
 import com.vride.carpooling.backend.dao.EmployeeDao;
 import com.vride.carpooling.backend.dao.TripDao;
 import com.vride.carpooling.backend.dao.UserDao;
+import com.vride.carpooling.backend.entity.Driver;
 import com.vride.carpooling.backend.entity.Trip;
 import com.vride.carpooling.backend.entity.User;
 import com.vride.carpooling.backend.info.UserInfo;
@@ -43,7 +44,10 @@ public class TripService {
 
 
 	public void joinRide(Integer driverId, Integer userId, String dateTime) {
-
+		
+		Driver updateDriver = driverDao.getOne(driverId);
+		updateDriver.setSeats(updateDriver.getSeats() - 1);
+		driverDao.save(updateDriver);
 		tripDao.save(new Trip(driverId, userId, dateTime));
 	}
 
