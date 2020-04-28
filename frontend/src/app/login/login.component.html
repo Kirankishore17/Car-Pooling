@@ -1,14 +1,18 @@
-<div>
-    <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Email id</mat-label>
-          <input matInput placeholder="Your emailid">
-        </mat-form-field>
-      
-        <mat-form-field class="example-full-width">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Your password">
-        </mat-form-field>
-      </form>
+<div class="container">
+  <form class="form-box">
+    <mat-form-field class="field">
+      <mat-label>Email Id</mat-label>
+      <input matInput type="email" placeholder="Your EmailId" [(ngModel)]="email" name="email">
+    </mat-form-field>
+  
+    <mat-form-field class="field">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Your Password" [(ngModel)]="password" name="password">
+    </mat-form-field>
+    <div class="btn">
 
+      <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>  
+      <p>New User?<a routerLink="/signup">Sign Up</a></p>
+    </div>
+  </form>
 </div>

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Bangers&display=swap');
+
+.img {
+    background-image: url('/assets/img/wall.jpg') !important;
+    background-size: cover;
+    background-position: center center;  
+    background-blend-mode: darken;  
+}
+
+.wall {
+    color:rgb(245, 11, 11);
+    -webkit-text-stroke: black 5px;
+    font-family: 'Bangers', cursive;
+    padding-top: 2rem;
+    font-size: 5rem;
+}
+
+.blue {
+    background-color: powderblue;
+}
