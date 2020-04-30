@@ -28,5 +28,13 @@ public class EmployeeService {
 		employeeDao.deleteById(id);
 	}
 
+	public Integer checkLogin(String email, String password) {
+		return employeeDao.checkLogin(email, password);
+	}
+
+	public Integer checkEmail(String email) {
+		return employeeDao.checkEmail(email);
+	}
+
 	
 }

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.vride.carpooling.backend.entity.Employee;
@@ -22,14 +23,30 @@ public class EmployeeController {
 	@Autowired
 	EmployeeService employeeService;
 	
-	@GetMapping("/")
-	public Trip method(){
-		return new Trip(1,2,"3");
+	@GetMapping("/login")
+	public Integer checkLogin(@RequestParam("email") String email, @RequestParam("password") String password){
+		Integer id = 0;
+		try {
+		id = employeeService.checkLogin(email, password);
+		System.out.println("\n\n" + id);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		return id;
+	}
+	
+	@GetMapping("/mail")
+	public Integer checkEmail(@RequestParam("email") String email) {
+		Integer resp =  employeeService.checkEmail(email);
+		System.out.println("\n\nresp:-  " + resp);
+		return resp;
 	}
 	
 	@PostMapping("/employee/new")
 	public void saveEmployee(@RequestBody Employee employee) {
-		employeeService.saveEmployee(employee);
+		System.out.println("\n\n->> " + employee.toString());
+		System.out.println("\n___kkkkkk____");
+		// employeeService.saveEmployee(employee);
 	}
 	
 	@PostMapping("/employee/all")

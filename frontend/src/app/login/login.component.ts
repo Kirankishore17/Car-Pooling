@@ -18,7 +18,13 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     console.log(this.email + " " + this.password);
-    this.service.loginRequest();
+    this.service.loginRequest().subscribe(
+      response => {console.log(response) 
+        if(response === null)
+          console.log('response null') 
+      },
+      error => console.log(error)
+    );
   }
 
 }
