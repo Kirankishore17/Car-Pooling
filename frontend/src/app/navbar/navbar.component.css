@@ -20,11 +20,10 @@
     width: 50%;
 }
 
-li {
-    padding-right: 1rem;;
-}
 
 a {
     text-decoration: none;
     color: white;
+    padding-right: 1rem;;
+
 }

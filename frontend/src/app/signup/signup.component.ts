@@ -43,10 +43,21 @@ export class SignupComponent implements OnInit {
 
   onRegister(){
     console.log('inside onregister:--')
-    console.log(this.name + " " + this.checkName())
-    console.log(this.number + " " + this.checkNumber())
-    console.log(this.email + " " + this.checkEmail() + " | " + this.emailStatus)
-    console.log(this.password + " " + this.checkPassword())    
+    this.employee = new Employee(0, this.name, this.number, this.gender, this.email, this.password )
+    this.service.saveEmployee(this.employee).subscribe(
+      //data => console.log('data: ' + this.employee + ' ' + data),
+      response => {
+        console.log('response: ' + response)
+        if(response === null)
+          console.log('response null, new user')
+        else
+          console.log('already exist try again')
+      }
+    );
+    // console.log(this.name + " " + this.checkName())
+    // console.log(this.number + " " + this.checkNumber())
+    // console.log(this.email + " " + this.checkEmail() + " | " + this.emailStatus)
+    // console.log(this.password + " " + this.checkPassword())    
   }
 
   checkPassword(){

@@ -16,9 +16,9 @@ export class RestDataService {
     private http:HttpClient
   ) { }
 
-  loginRequest() {
+  loginRequest(email:string, password:string) {
     // return this.http.get<Trip>('http://localhost:8080');
-    return this.http.get('http://localhost:8080/login?email=mail&password=p');
+    return this.http.get(`http://localhost:8080/login?email=${email}&password=${password}`);
   }
 
   checkEmail(email:string) {

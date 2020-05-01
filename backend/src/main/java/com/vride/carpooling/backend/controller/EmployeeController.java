@@ -27,6 +27,7 @@ public class EmployeeController {
 	public Integer checkLogin(@RequestParam("email") String email, @RequestParam("password") String password){
 		Integer id = 0;
 		try {
+		System.out.println(email + " : " + password);
 		id = employeeService.checkLogin(email, password);
 		System.out.println("\n\n" + id);
 		}catch(Exception e) {
@@ -35,18 +36,22 @@ public class EmployeeController {
 		return id;
 	}
 	
-	@GetMapping("/mail")
-	public Integer checkEmail(@RequestParam("email") String email) {
-		Integer resp =  employeeService.checkEmail(email);
-		System.out.println("\n\nresp:-  " + resp);
-		return resp;
-	}
+//	@GetMapping("/mail")
+//	public Integer checkEmail(@RequestParam("email") String email) {
+//		Integer resp =  employeeService.checkEmail(email);
+//		System.out.println("\n\nresp:-  " + resp);
+//		return resp;
+//	}
 	
 	@PostMapping("/employee/new")
-	public void saveEmployee(@RequestBody Employee employee) {
-		System.out.println("\n\n->> " + employee.toString());
-		System.out.println("\n___kkkkkk____");
+	public Integer saveEmployee(@RequestBody Employee employee) {
+		Integer resp =  employeeService.checkEmail(employee.getEmail());
+		if(resp == null)
+			System.out.println("\n\nnew user->> " + employee.toString());
+		else
+		System.out.println("\n___already exist____");
 		// employeeService.saveEmployee(employee);
+		return resp;
 	}
 	
 	@PostMapping("/employee/all")
