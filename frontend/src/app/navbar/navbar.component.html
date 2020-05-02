@@ -3,7 +3,7 @@
         <a routerLink="/">Home</a>
         <div>
             <ul>
-                <li><a  *ngIf = "!loginStatus.getLoginStatus()" routerLink="/about">About</a></li>
+                <li><a  *ngIf = "loginStatus.getLoginStatus()" routerLink="/driver">New ride</a></li>
                 <li><a  *ngIf = "loginStatus.getLoginStatus()" routerLink="/dashboard">Dashboard</a></li>
                 <li><a  *ngIf = "!loginStatus.getLoginStatus()" routerLink="/login">Login</a></li>
                 <li><a  *ngIf = "loginStatus.getLoginStatus()" routerLink="/logout">Logout</a></li>

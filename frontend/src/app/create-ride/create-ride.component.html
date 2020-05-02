@@ -1,0 +1,39 @@
+<div class="container">
+  <form class="form">
+
+    <mat-form-field class="field">
+      <input type="text" placeholder="Source" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="myControl"
+        [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field class="field">
+      <mat-label>Time</mat-label>
+      <input matInput type="time" placeholder="24hr clock">
+    </mat-form-field>
+
+    <button type="submit" >Create Ride</button>
+  </form>
+</div>

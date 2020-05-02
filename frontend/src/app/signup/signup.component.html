@@ -1,5 +1,5 @@
 <div class="container">
-    <form class="form-box">
+    <form #myForm="ngForm" class="form-box">
         <mat-form-field class="field">
             <mat-label>Name</mat-label>
             <input matInput type="text" placeholder="Your Name" [(ngModel)]="name" name="name" required>
@@ -7,27 +7,27 @@
         
         <mat-form-field class="field">
             <mat-label>Email Id</mat-label>
-            <input matInput type="email" placeholder="Your EmailId" [(ngModel)]="email" name="email" >
+            <input matInput type="email" placeholder="Your EmailId" [(ngModel)]="email" name="email" required>
         </mat-form-field>
         
         <mat-form-field class="field">
             <mat-label>Number</mat-label>
-            <input matInput type="number" placeholder="Your Mobile Number" [(ngModel)]="number" name="number" >
+            <input matInput type="number" placeholder="Your Mobile Number" [(ngModel)]="number" name="number" required>
         </mat-form-field>
 
         <mat-form-field class="field">
             <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="Your Password" [(ngModel)]="password" name="password" >
+            <input matInput type="password" placeholder="Your Password" [(ngModel)]="password" name="password" required>
         </mat-form-field>
         
         <mat-form-field class="field">
             <mat-label>Re Enter Password</mat-label>
-            <input matInput type="password" placeholder="Your Password" [(ngModel)]="confirmPassword" name="confirmPassword" >
+            <input matInput type="password" placeholder="Your Password" [(ngModel)]="confirmPassword" name="confirmPassword" required>
         </mat-form-field>
         
         <mat-form-field class="field">
             <mat-label>Gender</mat-label>
-            <mat-select [(ngModel)]="gender" name="gender" >
+            <mat-select [(ngModel)]="gender" name="gender" required>
                 <mat-option value="Male">Male</mat-option>
                 <mat-option value="Female">Female</mat-option>
                 <mat-option value="Other">Other</mat-option>
@@ -35,7 +35,7 @@
         </mat-form-field>
     
         <div class="btn">  
-            <button mat-raised-button color="primary" (click) = "onRegister()">Register</button>  
+            <button mat-raised-button color="primary" (click) = "onRegister(); myForm.reset()">Register</button>  
         </div>
     </form>
   </div>

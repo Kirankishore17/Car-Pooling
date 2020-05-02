@@ -28,15 +28,16 @@ export class LoginComponent implements OnInit {
       this.service.loginRequest(this.email, this.password).subscribe(
         response => {console.log(response) 
           if(response === null){
-            // this.router.navigate(['dashboard']);
             this.loginStatus.setLoginStatus(false);
             alert('invalid email/password')
+            
           }
           else{
             this.loginStatus.setLoginStatus(true);
+            sessionStorage.clear();
             sessionStorage.setItem('user', response.toString())
             console.log('navigated inside db call' )
-            this.router.navigate['login']
+            this.router.navigate(['dashboard']);
           } 
         },
         error => console.log(error)
@@ -48,8 +49,7 @@ export class LoginComponent implements OnInit {
       this.password = ''
       console.log('navigated')
       alert('Invalid entry')
-    }
-    
+    }    
   }
 
   checkLogin(){

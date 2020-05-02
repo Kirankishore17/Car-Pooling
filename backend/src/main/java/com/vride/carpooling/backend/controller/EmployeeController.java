@@ -46,11 +46,12 @@ public class EmployeeController {
 	@PostMapping("/employee/new")
 	public Integer saveEmployee(@RequestBody Employee employee) {
 		Integer resp =  employeeService.checkEmail(employee.getEmail());
-		if(resp == null)
+		if(resp == null) {
 			System.out.println("\n\nnew user->> " + employee.toString());
+			employeeService.saveEmployee(employee);			
+		}
 		else
 		System.out.println("\n___already exist____");
-		// employeeService.saveEmployee(employee);
 		return resp;
 	}
 	
