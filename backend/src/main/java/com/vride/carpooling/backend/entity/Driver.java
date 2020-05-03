@@ -2,6 +2,8 @@ package com.vride.carpooling.backend.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -9,6 +11,11 @@ import javax.persistence.Table;
 @Table(name = "driver")
 public class Driver {
 	@Id
+	@Column(name="primarykey", nullable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer primarykey;
+
+	
 	@Column(name="id", nullable=false)
 	private Integer id;
 	
@@ -34,14 +41,19 @@ public class Driver {
 		
 	}
 
-	public Driver(String time, Integer seats, String source, String destination, String vehicleNumber,
+	public Driver(Integer id, String time, Integer seats, String source, String destination, String vehicleNumber,
 			String date) {
+		this.id = id;
 		this.time = time;
 		this.seats = seats;
 		this.source = source;
 		this.destination = destination;
 		this.vehicleNumber = vehicleNumber;
 		this.date = date;
+	}
+
+	public Integer getPrimarykey() {
+		return primarykey;
 	}
 
 	public Integer getId() {

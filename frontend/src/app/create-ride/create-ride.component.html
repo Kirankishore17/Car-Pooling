@@ -1,39 +1,45 @@
 <div class="container">
   <form class="form">
 
-    <mat-form-field class="field">
-      <input type="text" placeholder="Source" aria-label="Number" matInput [formControl]="myControl"
-        [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
-    </mat-form-field>
+    <h2>Enter Ride Details</h2>
 
     <mat-form-field class="field">
-      <input type="text" placeholder="Destination" aria-label="Number" matInput [formControl]="myControl"
-        [matAutocomplete]="auto">
-      <mat-autocomplete #auto="matAutocomplete">
-        <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-          {{option}}
-        </mat-option>
-      </mat-autocomplete>
+      <mat-label>Source</mat-label>
+      <mat-select name="source" [(ngModel)]="source" required>
+        <mat-option *ngFor="let area of options" value="{{area}}">{{area}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field class="field">
+      <mat-label>Destination</mat-label>
+      <mat-select name="destination" [(ngModel)]="destination" required>
+        <mat-option *ngFor="let area of options" value="{{area}}">{{area}}</mat-option>
+      </mat-select>
     </mat-form-field>
 
     <mat-form-field class="field">
       <mat-label>Date</mat-label>
-      <input matInput [matDatepicker]="picker">
+      <input matInput  [(ngModel)]="date" name="date" [matDatepicker]="picker">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
-
     <mat-form-field class="field">
       <mat-label>Time</mat-label>
-      <input matInput type="time" placeholder="24hr clock">
+      <input matInput type="time" [(ngModel)]="time" name="time" value="09:00">
     </mat-form-field>
 
-    <button type="submit" >Create Ride</button>
+    <mat-form-field class="field">
+      <mat-label>Vehicle Number</mat-label>
+      <input matInput type="text" placeholder="Your Vehicle Number"  [(ngModel)]="vehicleNumber" name="vehicleNumber" required>
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Seats</mat-label>
+      <input matInput type="number" placeholder="Seats Available" [(ngModel)]="seats" name="seats" required>
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary" (click)="onCreate()">Create Ride</button>
   </form>
 </div>

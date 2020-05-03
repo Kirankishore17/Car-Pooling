@@ -33,7 +33,8 @@ public class DriverController {
 	@PostMapping("/driver")
 	// public void saveDriver(@RequestParam("driver") Driver driver) {
 	public void saveDriver(@RequestBody Driver driver) {
-	driverService.saveDriver(driver);
+		System.out.println("driver --> " + driver.toString());
+		driverService.saveDriver(driver);
 	}
 	
 	@PostMapping("/driver/route")
