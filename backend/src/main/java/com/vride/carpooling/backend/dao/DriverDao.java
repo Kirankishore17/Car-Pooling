@@ -13,4 +13,7 @@ public interface DriverDao extends JpaRepository<Driver, Integer> {
 	@Query("SELECT a from Driver a where sourcepoint =:source and destinationpoint =:destination and seats > 0")
 	public List<Driver> findAllInRoute(@Param("source") String source, @Param("destination") String destination);
 
+	@Query("SELECT a from Driver a where seats > 0")
+	public List<Driver> allRides();
+
 }

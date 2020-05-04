@@ -31,7 +31,6 @@ public class DriverController {
 	}
 	
 	@PostMapping("/driver")
-	// public void saveDriver(@RequestParam("driver") Driver driver) {
 	public void saveDriver(@RequestBody Driver driver) {
 		System.out.println("driver --> " + driver.toString());
 		driverService.saveDriver(driver);
@@ -48,36 +47,9 @@ public class DriverController {
 		driverService.deleteDriver(id);
 	}
 	
-	
-	/*
-	@Autowired
-	DriverDao driverDao;
-	
-	@Autowired
-	EmployeeDao employeeDao;
-	
-	@RequestMapping("/")
-	// public List<Driver> home() {
-	public Driver home() {
-		Driver obj = new Driver("8:00", 4, "adyar", "mylapore", "tn07-3317", "dec 12");
-		obj.setId(1);
-		driverDao.save(obj);
-		// List<Driver> list = driverDao.findAll();
-		// return list;
-		obj = driverDao.getOne(1);
-		return obj;
+	@RequestMapping("/allrides")
+	public List<DriverInfo> allRides(){
+		return driverService.allRides();
 	}
 
-	@RequestMapping("/kk")
-	public Driver mapping() {
-		Employee ob = new Employee("kishore","5555","male","@mail.com","password");
-		employeeDao.save(ob);
-		ob = employeeDao.getOne(1);
-		Driver obj = new Driver("8:00", 4, "adyar", "mylapore", "tn07-3317", "dec 12");
-		obj.setId(ob.getId());
-		System.out.println("\n\n" + ob.toString());
-		System.out.println("\n\n" + obj.toString());
-		return obj;
-	}
-	*/
 }

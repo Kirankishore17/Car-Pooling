@@ -5,6 +5,7 @@ import com.vride.carpooling.backend.entity.Employee;
 
 public class DriverInfo {
 	
+	private Integer id;
 	private String name;
 	private String number;
 	private String time;
@@ -18,6 +19,7 @@ public class DriverInfo {
 	}
 	
 	public DriverInfo(Employee employee, Driver driver) {
+		this.id = employee.getId();
 		this.name = employee.getName();
 		this.number = employee.getNumber();
 		this.time = driver.getTime();
@@ -25,6 +27,14 @@ public class DriverInfo {
 		this.destination = driver.getDestination();
 		this.vehicleNumber = driver.getVehicleNumber();
 		this.date = driver.getDate();
+	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	public String getName() {

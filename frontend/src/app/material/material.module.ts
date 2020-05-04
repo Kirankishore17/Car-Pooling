@@ -5,10 +5,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
-
+import {MatTableModule} from '@angular/material/table';
 
 const MaterialComponents = [
   MatButtonModule,
@@ -17,9 +16,9 @@ const MaterialComponents = [
   MatGridListModule,
   MatFormFieldModule,
   MatSelectModule,
-  MatAutocompleteModule,
   MatDatepickerModule,
-  MatNativeDateModule
+  MatNativeDateModule,
+  MatTableModule
   ];
 
 @NgModule({
