@@ -19,11 +19,11 @@ public class UserService {
 	@Autowired
 	UserDao userDao;
 	
-	public UserInfo getUserInfoById(Integer id) throws Exception{
-		Employee employee = employeeDao.findById(id).orElseThrow(() -> new Exception());
-		User user = userDao.findById(id).orElseThrow(() -> new Exception());
-		return new UserInfo(employee, user);
-	}
+//	public UserInfo getUserInfoById(Integer id) throws Exception{
+//		Employee employee = employeeDao.findById(id).orElseThrow(() -> new Exception());
+//		User user = userDao.findById(id).orElseThrow(() -> new Exception());
+//		return new UserInfo(employee, user);
+//	}
 
 	public void saveUser(User user) {
 

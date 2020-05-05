@@ -19,14 +19,14 @@ public class UserInfo {
 		
 	}
 			
-	public UserInfo(Employee employee, User user) {
+	public UserInfo(Employee employee, String source, String destination, String date, String time) {
 		this.name = employee.getName();
 		this.number = employee.getNumber();
 		this.gender = employee.getGender();
-		this.time = user.getTime();
-		this.source = user.getSource();
-		this.destination = user.getDestination();
-		this.date = user.getDate();
+		this.time = time;
+		this.source = source;
+		this.destination = destination;
+		this.date = date;
 	}
 
 	public String getName() {

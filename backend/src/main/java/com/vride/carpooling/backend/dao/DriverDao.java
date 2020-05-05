@@ -16,4 +16,7 @@ public interface DriverDao extends JpaRepository<Driver, Integer> {
 	@Query("SELECT a from Driver a where seats > 0")
 	public List<Driver> allRides();
 
+	@Query("SELECT a from Driver a where date = :date and time = :time")
+	public Driver getDetails(@Param("date") String date, @Param("time") String time);
+
 }

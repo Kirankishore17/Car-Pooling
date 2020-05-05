@@ -13,12 +13,16 @@ public class DriverInfo {
 	private String destination;
 	private String vehicleNumber;
 	private String date;
+	private Integer key;
 	
 	public DriverInfo() {
 		
 	}
 	
+
+
 	public DriverInfo(Employee employee, Driver driver) {
+		this.key = driver.getPrimarykey();
 		this.id = employee.getId();
 		this.name = employee.getName();
 		this.number = employee.getNumber();
@@ -37,7 +41,13 @@ public class DriverInfo {
 		this.id = id;
 	}
 
-	public String getName() {
+	public Integer getKey() {
+		return key;
+	}
+
+	public void setKey(Integer key) {
+		this.key = key;
+	}	public String getName() {
 		return name;
 	}
 

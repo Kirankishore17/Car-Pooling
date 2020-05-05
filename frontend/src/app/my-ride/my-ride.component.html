@@ -1,0 +1,29 @@
+<div class="container">
+
+    <mat-tab-group>
+        
+        <mat-tab label="Drive Them">
+            <p *ngFor="let val of rideDetails">{{val.source}}</p> 
+        </mat-tab>
+        
+        <mat-tab label="Join Them">
+            
+            <mat-card class="card"  *ngFor="let driver of driverDetails">
+                <mat-card-header>
+                  <mat-card-title>{{driver.source}} To {{driver.destination}}</mat-card-title>
+                  <mat-card-subtitle>{{ driver.date }} at {{driver.time}}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    <p>Name: {{driver.name}}</p>
+                    <p>Number: {{driver.number}}</p>
+                </mat-card-content>
+                <!-- <mat-card-actions>
+                  <button mat-button>LIKE</button>
+                  <button mat-button>SHARE</button>
+                </mat-card-actions> -->
+              </mat-card>
+              
+        </mat-tab>
+      
+    </mat-tab-group>      
+</div>

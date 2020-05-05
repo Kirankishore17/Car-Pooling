@@ -36,7 +36,7 @@ export class SignupComponent implements OnInit {
   }
 
   onRegister(){
-    console.log('inside onregister:--')
+    // console.log('inside onregister:--')
     if(
       this.checkName() &&
       this.checkNumber() &&
@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
     else {
       alert('invalid entry')
       //console.log(this.name + " " + this.checkName())
-      console.log(this.number + " " + this.checkNumber() + " ")
+      // console.log(this.number + " " + this.checkNumber() + " ")
       //console.log(this.email + " " + this.checkEmail() )
       //console.log(this.password + " " + this.checkPassword()) 
     }

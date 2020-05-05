@@ -15,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LogoutComponent } from './logout/logout.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateRideComponent } from './create-ride/create-ride.component';
+import { MyRideComponent } from './my-ride/my-ride.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { CreateRideComponent } from './create-ride/create-ride.component';
     SignupComponent,
     LogoutComponent,
     DashboardComponent,
-    CreateRideComponent
+    CreateRideComponent,
+    MyRideComponent
   ],
   imports: [
     BrowserModule,

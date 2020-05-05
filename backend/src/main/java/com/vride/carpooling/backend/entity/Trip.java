@@ -23,15 +23,27 @@ public class Trip {
 	
 	@Column(name="date", nullable=false)
 	private String date;
+	
+	@Column(name="time", nullable=false)
+	private String time;
 
 	public Trip() {
 		
 	}
 	
-	public Trip(Integer driverId, Integer userId, String date) {
+	public Trip(Integer driverId, Integer userId, String date, String time) {
 		this.driverId = driverId;
 		this.userId = userId;
 		this.date = date;
+		this.time = time;
+	}
+	
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
 	}
 
 	public Integer getDriverId() {

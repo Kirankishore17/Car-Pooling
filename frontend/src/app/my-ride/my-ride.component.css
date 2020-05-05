@@ -1,0 +1,13 @@
+.container {
+    height: 20rem;
+    padding: 4rem;
+    margin-bottom: 2rem;
+  }
+
+.card {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  max-width: 300px;
+  background-color: rgba(250, 248, 248, 0.952);
+  border: solid 0.8px rgb(187, 184, 214);
+}

@@ -7,6 +7,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { RouteGuardService } from './service/route-guard.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateRideComponent } from './create-ride/create-ride.component';
+import { MyRideComponent } from './my-ride/my-ride.component';
 
 
 const routes: Routes = [
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:"signup", component:SignupComponent},  
   {path:"dashboard", component:DashboardComponent},  
   {path:"driver", component:CreateRideComponent, canActivate:[RouteGuardService]},  
+  {path:"myride", component:MyRideComponent, canActivate:[RouteGuardService]},  
   {path:"**", component:HomeComponent}
 
 ];

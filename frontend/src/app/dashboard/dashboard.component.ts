@@ -13,7 +13,8 @@ export class DriverInfo{
 	  public source:string,
 	  public destination:string,
 	  public vehicleNumber:string,
-	  public date:string
+    public date:string,
+    public key:number
   ){}
 }
 
@@ -56,7 +57,7 @@ export class DashboardComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  joinRide(driver) {
+  joinRide(driver:DriverInfo) {
     if(this.loginStatus.getLoginStatus()){
       console.log(driver.id + " is driverId. user loggedin");
       if( driver.id === Number(sessionStorage.getItem('user')) ){
@@ -66,8 +67,8 @@ export class DashboardComponent implements OnInit {
         console.log('user')
         var driverId = driver.id;
         var userId = Number(sessionStorage.getItem('user'));
-        var dateTime = String(driver.date).concat(driver.time);
-        this.service.joinRide(driverId, userId, dateTime).subscribe();
+        // var dateTime = String(driver.date).concat(driver.time);
+        this.service.joinRide(driverId, userId, driver.date, driver.key, driver.time).subscribe();
       }
     }
     else{

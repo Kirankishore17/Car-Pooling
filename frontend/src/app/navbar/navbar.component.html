@@ -4,6 +4,7 @@
         <div>
             <ul>
                 <li><a  routerLink="/dashboard">Dashboard</a></li>
+                <li><a  *ngIf = "loginStatus.getLoginStatus()" routerLink="/myride">My ride</a></li>
                 <li><a  *ngIf = "loginStatus.getLoginStatus()" routerLink="/driver">New ride</a></li>
                 <li><a  *ngIf = "!loginStatus.getLoginStatus()" routerLink="/login">Login</a></li>
                 <li><a  *ngIf = "loginStatus.getLoginStatus()" routerLink="/logout">Logout</a></li>

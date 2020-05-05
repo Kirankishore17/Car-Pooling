@@ -64,9 +64,9 @@ public class DriverService {
 			int dd = Integer.parseInt(date[0]);
 			LocalDate today = LocalDate.now();
 //			System.out.println(info.toString());
-			System.out.println("\nfrom db -->" + LocalDate.of(yyyy, mm, dd));
-			System.out.println("today -->" + LocalDate.of(today.getYear(), today.getMonth(), today.getDayOfMonth()));
-			System.out.println("output:=====>" + LocalDate.of(yyyy, mm, dd).getMonth());
+//			System.out.println("\nfrom db -->" + LocalDate.of(yyyy, mm, dd));
+//			System.out.println("today -->" + LocalDate.of(today.getYear(), today.getMonth(), today.getDayOfMonth()));
+//			System.out.println("output:=====>" + LocalDate.of(yyyy, mm, dd).getMonth());
 //			.isBefore(LocalDate.of(today.getYear(), today.getMonth(), today.getDayOfMonth())) + "\n\n");
 			
 			if( !(LocalDate.of(yyyy, mm, dd)

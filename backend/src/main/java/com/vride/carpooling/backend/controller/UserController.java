@@ -20,12 +20,12 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping("/user/{id}")
-	public UserInfo returnUserInfoById(@PathVariable("id") Integer id) throws Exception {
-		
-		UserInfo userInfo = userService.getUserInfoById(id);
-		return userInfo;
-	}
+//	@RequestMapping("/user/{id}")
+//	public UserInfo returnUserInfoById(@PathVariable("id") Integer id) throws Exception {
+//		
+//		UserInfo userInfo = userService.getUserInfoById(id);
+//		return userInfo;
+//	}
 	
 	@PostMapping("/user/new")
 	// public void saveDriver(@RequestParam("driver") Driver driver) {
