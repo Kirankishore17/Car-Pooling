@@ -23,6 +23,7 @@ export class UserInfo {
 export class MyRideComponent implements OnInit {
   public driverDetails:DriverInfo[]
   public rideDetails
+  public map: Map<any, any>;
   public group
 
   constructor(
@@ -30,9 +31,11 @@ export class MyRideComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    let keys = [1];
+
     this.service.getDriverInfo(Number(sessionStorage.getItem('user'))).subscribe(
       data => {
-        console.log('myride\nlength: ' + data.length);
+        // console.log('myride\nlength: ' + data.length);
         this.driverDetails = data
         // console.log(data);
       }
@@ -41,30 +44,52 @@ export class MyRideComponent implements OnInit {
 
     this.service.getRiderInfo(Number(sessionStorage.getItem('user'))).subscribe(
       data =>{
-        console.log('rider info : ' + data);
+        // console.log('rider info : ' + data);
         this.rideDetails = data;
-        console.log(typeof this.rideDetails)
-        console.log(this.rideDetails)
+        // console.log(typeof this.rideDetails)
+        // console.log(this.rideDetails)
 
-        let map = new Map();
+        this.map = new Map();
         this.rideDetails.forEach((val) => {
-          console.log(val);
+          // console.log(val);
           var source = val.source
           var destination = val.destination
           var date = val.date
-          var time = val.source
+          var time = val.time
           var key = source+destination+date+time;
-          console.log(key)
-          if(map.has(key)){
-            map.set(key, map.get(key).push(val))
+          // console.log(key)
+          if(this.map.has(key)){
+            console.log('map has key')
+            var p = this.map.get(key)
+            p.name.push(val.name)
+            p.number.push(val.number)
+            p.gender.push(val.gender)
+            p.length = p.length + 1;
+            // console.log(p.name)
+            // console.log(this.map)
+            
           }else{
-            map.set(key, [val])
+            console.log('new key set')
+            this.map.set(key, {"source":source, "destination":destination, "date":date, "time":time,
+                      "name":[val.name], "gender":[val.gender], "number":[val.number], "length":1})
+            //keys.push(String(key));
+            keys.push(8);
+            // console.log(this.map);
           }
         });
-        console.log(map);
+        console.log('outside loop');
+        console.log(this.map);
       }
     );
     this.group = []
+    console.log('keys: ' + keys)
+    for(let eachKey of keys){
+      if(this.map.has("IIT MadrasRA Puram6/5/2020IIT Madras")){
+        this.group.push(this.map.get("IIT MadrasRA Puram6/5/2020IIT Madras"))
+        console.log(eachKey)
+      }
+    }
+    console.log('group: ' + this.group);
   }
 
 }

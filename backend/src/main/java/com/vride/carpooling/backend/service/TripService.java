@@ -92,7 +92,7 @@ public class TripService {
 			if( !(LocalDate.of(yyyy, mm, dd)
 			.isBefore(LocalDate.of(today.getYear(), today.getMonth(), today.getDayOfMonth()))) ) {
 				System.out.println("today or tomorrow");
-				Driver driver = driverDao.getDetails(eachUser.getDate(), eachUser.getTime()); 
+				Driver driver = driverDao.getDetails(eachUser.getDriverId(), eachUser.getDate(), eachUser.getTime()); 
 				String source = driver.getSource();
 				String destination = driver.getDestination();
 				String rideDate = driver.getDate();

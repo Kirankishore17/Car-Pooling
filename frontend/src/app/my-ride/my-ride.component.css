@@ -7,7 +7,14 @@
 .card {
   margin-bottom: 1rem;
   margin-top: 1rem;
-  max-width: 300px;
+  max-width: 350px;
   background-color: rgba(250, 248, 248, 0.952);
   border: solid 0.8px rgb(187, 184, 214);
+  margin-right: 1rem;
 }
+
+ .cols{
+  display: flex;
+  justify-content: left;
+  padding-right: 1rem;
+} 

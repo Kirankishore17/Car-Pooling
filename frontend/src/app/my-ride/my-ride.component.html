@@ -3,11 +3,28 @@
     <mat-tab-group>
         
         <mat-tab label="Drive Them">
-            <p *ngFor="let val of rideDetails">{{val.source}}</p> 
+            <!-- <div *ngFor="let val of map | keyvalue">
+              <p>source: {{val.value.source}}</p>
+              <p>destination: {{val.value.destination}}</p>
+              <div *ngFor="let name of val.value.name"><p>{{name}}</p></div>
+            </div> -->
+            <div class="cols">
+            <mat-card class="card"  *ngFor="let item of map | keyvalue">
+              <mat-card-header>
+                <mat-card-title>{{item.value.source}} To {{item.value.destination}}</mat-card-title>
+                <mat-card-subtitle>{{ item.value.date }} at {{item.value.time}}</mat-card-subtitle>
+              </mat-card-header>
+              <mat-card-content >
+                <ul *ngFor="let name of item.value.name">
+                  <li>{{name}}</li>
+                </ul>
+              </mat-card-content>
+            </mat-card>
+            </div>
         </mat-tab>
         
         <mat-tab label="Join Them">
-            
+            <div class="cols">
             <mat-card class="card"  *ngFor="let driver of driverDetails">
                 <mat-card-header>
                   <mat-card-title>{{driver.source}} To {{driver.destination}}</mat-card-title>
@@ -22,7 +39,8 @@
                   <button mat-button>SHARE</button>
                 </mat-card-actions> -->
               </mat-card>
-              
+            </div>
+
         </mat-tab>
       
     </mat-tab-group>      
