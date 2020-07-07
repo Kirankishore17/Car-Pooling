@@ -23,11 +23,11 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
-    console.log(this.checkLogin());
+    // console.log(this.checkLogin());
     if (this.checkLogin()) {
       this.service.loginRequest(this.email, this.password).subscribe(
         response => {
-          console.log(response)
+          // console.log(response)
           if (response === null) {
             this.loginStatus.setLoginStatus(false);
             alert('invalid email/password')
