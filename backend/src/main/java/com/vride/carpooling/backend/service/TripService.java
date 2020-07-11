@@ -27,8 +27,8 @@ public class TripService {
 	@Autowired
 	TripDao tripDao;
 	
-	@Autowired
-	UserDao userDao;
+//	@Autowired
+//	UserDao userDao;
 	
 	@Autowired
 	DriverDao driverDao;

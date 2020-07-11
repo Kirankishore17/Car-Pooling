@@ -76,15 +76,14 @@ export class MyRideComponent implements OnInit {
         // console.log(this.map);
       }
     );
-    this.group = []
+    // this.group = []
     // console.log('keys: ' + keys)
-    for (let eachKey of keys) {
-      if (this.map.has("IIT MadrasRA Puram6/5/2020IIT Madras")) {
-        this.group.push(this.map.get("IIT MadrasRA Puram6/5/2020IIT Madras"))
-        // console.log(eachKey)
-      }
-    }
-    // console.log('group: ' + this.group);
+    // for (let eachKey of keys) {
+    //   if (this.map.has("IIT MadrasRA Puram6/5/2020IIT Madras")) {
+    //     this.group.push(this.map.get("IIT MadrasRA Puram6/5/2020IIT Madras"))
+    //     // console.log(eachKey)
+    //   }
+    // }
   }
 
 }
